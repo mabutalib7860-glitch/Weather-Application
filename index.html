@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+
+    <!-- Sidebar – desktop style (hidden on mobile) -->
+    <aside class="sidebar">
+        <div class="logo">☁</div>
+        <nav class="menu">
+            <button class="menu-item active">Weather</button>
+            <button class="menu-item">Cities</button>
+            <button class="menu-item">Map</button>
+            <button class="menu-item">Settings</button>
+        </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="main">
+        <!-- Top bar -->
+        <header class="topbar">
+            <h1 class="app-title">Weather Dashboard</h1>
+            <div class="search">
+                <input id="city" type="text" placeholder="Search city..." />
+                <button onclick="getWeather()">Search</button>
+            </div>
+        </header>
+
+        <!-- For small screens, mobile style title -->
+        <h2 class="mobile-title">🌦 Weather App</h2>
+
+        <!-- Current weather big card -->
+        <section id="currentWeather" class="card current-weather">
+            <p class="placeholder">Search for a city to see the weather.</p>
+        </section>
+
+        <!-- Grid area -->
+        <section class="grid">
+            <!-- Today (hourly) -->
+            <div id="todayForecast" class="card small-card">
+                <h3>Today&#39;s Forecast</h3>
+                <div class="chips-row" id="todayChips"></div>
+            </div>
+
+            <!-- 5–7 day forecast -->
+            <div id="weeklyForecast" class="card small-card">
+                <h3>Next Days</h3>
+                <div class="chips-row" id="weekChips"></div>
+            </div>
+
+            <!-- Extra info -->
+            <div id="extraInfo" class="card small-card">
+                <h3>Air & Sun</h3>
+                <div class="extra-grid" id="extraGrid">
+                    <!-- Filled from JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
